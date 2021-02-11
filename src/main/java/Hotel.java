@@ -18,16 +18,15 @@ public class Hotel {
         this.conferenceRoomList.add(conferenceRoom);
     }
 
-
-      //bedroom in bedRoomsList bedroom.getRoomNumber
-    public Bedroom findBedroomByRoomNumber(String roomNumber){
-     for (Bedroom bedroom : bedRoomsList){
-         if (bedroom.getRoomNumber() == roomNumber){
-             return bedroom;
-         }
-         else return null;
-     }
-
+    public Bedroom findBedroomByRoomNumber(String roomNumber) {
+        Bedroom foundRoom;
+        foundRoom = null;
+        for (Bedroom bedroom : bedRoomsList) {
+            if (bedroom.getRoomNumber() == roomNumber) {
+                foundRoom = bedroom;
+            }
+        }
+        return foundRoom;
     }
 
     public void checkGuestIntoBedroom(Guest guest, String roomNumber){

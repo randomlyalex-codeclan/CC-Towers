@@ -22,5 +22,7 @@ public abstract class Room {
         this.guests.add(guest);
     }
 
-
+    public int getGuestCount(){
+        return this.guests.size();
+    }
 }

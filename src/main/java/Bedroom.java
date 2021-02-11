@@ -17,7 +17,7 @@ public class Bedroom extends Room {
         return this.roomType;
     }
 
-    public void checkInToRoom(Guest guest, String roomNumber){
-        addGuest(guest);
-    }
+//    public void checkInToRoom(Guest guest, String roomNumber){
+//        addGuest(guest);
+//    }
 }
