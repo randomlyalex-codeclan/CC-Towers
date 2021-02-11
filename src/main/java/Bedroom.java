@@ -2,6 +2,7 @@ public class Bedroom extends Room {
 
     private String roomNumber;
     private RoomType roomType;
+    private int nightlyRate;
 
     public Bedroom(int capacity, String roomNumber, RoomType roomType){
         super(capacity);
@@ -17,7 +18,14 @@ public class Bedroom extends Room {
         return this.roomType;
     }
 
+    public void setNightlyRate(int rate){
+        this.nightlyRate = rate;
+    }
+
+    public int getNightlyRate(){
+        return this.nightlyRate;
+    }
+
 //    public void checkInToRoom(Guest guest, String roomNumber){
-//        addGuest(guest);
-//    }
+
 }

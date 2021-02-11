@@ -18,11 +18,15 @@ public abstract class Room {
         return this.guests;
     }
 
-    public void addGuestToRoom(Guest guest){
-        this.guests.add(guest);
+    public void addOrRemoveGuestToRoom(Guest guest){
+        if (this.guests.contains(guest)){
+            this.guests.remove(guest);
+        }
+        else this.guests.add(guest);
     }
 
     public int getGuestCount(){
         return this.guests.size();
     }
+
 }

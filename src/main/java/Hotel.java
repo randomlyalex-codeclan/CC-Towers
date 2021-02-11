@@ -29,9 +29,36 @@ public class Hotel {
         return foundRoom;
     }
 
-    public void checkGuestIntoBedroom(Guest guest, String roomNumber){
+    public void checkGuestInOutOfBedroom(Guest guest, String roomNumber){
         Bedroom bedroom;
         bedroom = findBedroomByRoomNumber(roomNumber);
-        bedroom.addGuestToRoom(guest);
+        if (bedroom != null) {
+            bedroom.addOrRemoveGuestToRoom(guest);
+        }
+    }
+
+    public ConferenceRoom findConferenceRoomByName(String roomName) {
+        ConferenceRoom foundRoom;
+        foundRoom = null;
+        for (ConferenceRoom conferenceRoom : conferenceRoomList) {
+            if (conferenceRoom.getName() == roomName) {
+                foundRoom = conferenceRoom;
+            }
+        }
+        return foundRoom;
+    }
+
+    public void checkGuestInOutOfConferenceRoom(Guest guest, String roomName){
+        ConferenceRoom conferenceRoom;
+        conferenceRoom = findConferenceRoomByName(roomName);
+        if (conferenceRoom != null) {
+            conferenceRoom.addOrRemoveGuestToRoom(guest);
+        }
+    }
+
+    public Booking bookRoom(Bedroom bedroom, int nightsBooked){
+        Booking booking;
+        booking = new Booking(nightsBooked, bedroom);
+        return booking;
     }
 }
