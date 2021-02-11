@@ -18,6 +18,9 @@ public class Hotel {
         this.conferenceRoomList.add(conferenceRoom);
     }
 
+    //Consider Casting to stop the repitition below:
+
+
     public Bedroom findBedroomByRoomNumber(String roomNumber) {
         Bedroom foundRoom;
         foundRoom = null;
